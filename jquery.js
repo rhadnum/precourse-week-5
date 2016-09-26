@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
 	var score = 0;
+	var counter = 0;
 	var scoreValue = "#score";
 
 	$("li").click(function(){
@@ -9,8 +10,10 @@ $(document).ready(function(){
 
 			$(this).css("background-color", "green")
 			$(this).css("color","white")
-			$("li").removeClass("incorrect")
+			//$("li").removeClass("incorrect")
 			score = score + 1;
+			counter = counter + 1;
+
 
 			$('#score').html(score)
 			
@@ -20,6 +23,13 @@ $(document).ready(function(){
 
 			$(this).css("background-color", "red")
 			$(this).css("color","white")
+			counter = counter + 1;
+		}
+
+		if(counter === 1){
+			$("li").removeClass("correct");
+			$("li").removeClass("incorrect");
+
 		}
 
 	})
