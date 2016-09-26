@@ -1,0 +1,21 @@
+.container {
+	width:20%;
+	margin: auto;
+}
+
+
+ul li{
+	color:#000000;
+	display: list-item;
+	list-style-type: none;
+	font-family: sans-serif;
+	width:100px;
+	border:1px solid black;
+	padding:10px;
+	margin:30px;
+	text-align: center;
+}
+
+p{
+	text-align: center;
+}
