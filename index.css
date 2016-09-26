@@ -1,21 +1,51 @@
-.container {
-	width:20%;
-	margin: auto;
+
+.chosen{
+	background-color: green;
+	color:white;
 }
 
+.incorrect-chosen{
+	background-color: red;
+	color:white;
+}
+
+.unchosen{
+	cursor: default;
+}
 
 ul li{
-	color:#000000;
+	color:rgb(0,128,255);
 	display: list-item;
 	list-style-type: none;
-	font-family: sans-serif;
-	width:100px;
+	font-family: Pavanam;
+	width:50%;
 	border:1px solid black;
 	padding:10px;
-	margin:30px;
+	margin:30px auto;
 	text-align: center;
+	border-radius: 15px;
+
+}
+
+ul li:hover{
+	cursor: pointer;
 }
 
 p{
-	text-align: center;
+	font-family: Pavanam;
+	
+}
+
+#title{
+	margin-left:41%;
+}
+
+.question{
+	margin-left:49%;
+}
+
+
+.scoreString{
+	margin-left:80%;
+	display: inline;
 }

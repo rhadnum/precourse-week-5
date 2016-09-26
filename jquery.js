@@ -8,29 +8,58 @@ $(document).ready(function(){
 
 		if( $(this).hasClass("correct")){
 
-			$(this).css("background-color", "green")
-			$(this).css("color","white")
-			//$("li").removeClass("incorrect")
-			score = score + 1;
-			counter = counter + 1;
+			if($(this).index() === 0){
+				var next = $(this).next()
+				next.removeClass('incorrect');
+				next.addClass('unchosen');
+				next.next().removeClass('incorrect');
+				next.next().addClass('unchosen');
+			}
 
 
-			$('#score').html(score)
+			else if($(this).index() === 1){
+				$(this).prevAll().removeClass('incorrect')
+				$(this).prevAll().addClass('unchosen')
+				$(this).next().removeClass('incorrect');
+				$(this).next().addClass('unchosen')
+			}
+
+			else if($(this).index() === 2){
+				$(this).prevAll().removeClass('incorrect');
+				$(this).prevAll().addClass('unchosen');
+				$(this).next().removeClass('incorrect');
+				$(this).next().addClass('unchosen');
+			}
+			
+
+			$(this).removeClass("correct");
+			$(this).addClass("chosen");
+			score ++;
+
+			$('#score').html(score);
+			$('title').html("Multiple Choice Quiz - " + score)
+
+
+			
 			
 		}
 
-		else if( $(this).hasClass("incorrect")){
+		if( $(this).hasClass("incorrect")){
+			
+			$(this).addClass('incorrect-chosen')
 
-			$(this).css("background-color", "red")
-			$(this).css("color","white")
-			counter = counter + 1;
-		}
+			counter ++;
 
-		if(counter === 1){
-			$("li").removeClass("correct");
-			$("li").removeClass("incorrect");
+			$('#counter').html(counter);
+			
 
 		}
+
+		if(counter >= 5){
+			location.reload(true);
+		}
+
+		
 
 	})
 
