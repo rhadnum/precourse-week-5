@@ -1,33 +1,42 @@
 $(document).ready(function(){
 
 	var score = 0;
-	var counter = 0;
+	var inc_counter = 0;
 	var scoreValue = "#score";
 
 	$("li").click(function(){
 
 		if( $(this).hasClass("correct")){
 
+
 			if($(this).index() === 0){
-				var next = $(this).next()
-				next.removeClass('incorrect');
-				next.addClass('unchosen');
-				next.next().removeClass('incorrect');
-				next.next().addClass('unchosen');
+				$(this).css("cursor","default");
+				$(this).next().removeClass('incorrect');
+				$(this).next().addClass('unchosen');
+				$(this).next().css("cursor","default");
+				$(this).next().next().removeClass('incorrect');
+				$(this).next().next().addClass('unchosen');
+				$(this).next().next().css("cursor","default");
 			}
 
 
 			else if($(this).index() === 1){
-				$(this).prevAll().removeClass('incorrect')
+				$(this).css("cursor","default");
+				$(this).prevAll().removeClass()
+				$(this).prevAll().css("cursor","default");
 				$(this).prevAll().addClass('unchosen')
-				$(this).next().removeClass('incorrect');
+				$(this).next().removeClass();
+				$(this).next().css("cursor","default");
 				$(this).next().addClass('unchosen')
 			}
 
 			else if($(this).index() === 2){
-				$(this).prevAll().removeClass('incorrect');
+				$(this).css("cursor","default");
+				$(this).prevAll().removeClass();
+				$(this).prevAll().css("cursor","default");
 				$(this).prevAll().addClass('unchosen');
-				$(this).next().removeClass('incorrect');
+				$(this).next().removeClass();
+				$(this).next().css("cursor","default");
 				$(this).next().addClass('unchosen');
 			}
 			
@@ -44,24 +53,52 @@ $(document).ready(function(){
 			
 		}
 
-		if( $(this).hasClass("incorrect")){
+		else if( $(this).hasClass("incorrect")){
+
+			$(this).removeClass('incorrect');
+			$(this).addClass('incorrect-chosen');
+
+
+			if($(this).index() === 0){
+				$(this).css("cursor","default");
+				$(this).nextAll().removeClass();
+				$(this).nextAll().css("cursor","default");
+				$(this).nextAll().addClass('unchosen');
+			}
+
+			else if($(this).index() == 1){
+				$(this).css("cursor","default");
+				$(this).prevAll().removeClass();
+				$(this).prevAll().css("cursor","default");
+				$(this).prevAll().addClass('unchosen');
+
+				$(this).next().removeClass();
+				$(this).next().css("cursor","default");
+				$(this).next().addClass('unchosen');
+				
+			}
+
+			else if($(this).index() == 2){
+				$(this).css("cursor","default");
+				$(this).prevAll().removeClass();
+				$(this).prevAll().css("cursor","default");
+				$(this).prevAll().addClass('unchosen');
+			}
+
 			
-			$(this).addClass('incorrect-chosen')
 
-			counter ++;
-
-			$('#counter').html(counter);
-			
-
-		}
-
-		if(counter >= 5){
-			location.reload(true);
 		}
 
 		
 
 	})
+	
+	$('#reload').click(function(){
 
+
+		location.reload(true);
+
+
+	})
 
 })

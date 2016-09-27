@@ -10,7 +10,7 @@
 }
 
 .unchosen{
-	cursor: default;
+	cursor:;
 }
 
 ul li{
@@ -42,10 +42,34 @@ p{
 
 .question{
 	margin-left:49%;
+	font-weight: bold;
 }
 
 
 .scoreString{
-	margin-left:80%;
+	margin-left:87.5%;
 	display: inline;
+	font-size: 125%;
+	border:1px solid black;
+	padding:1%;
+	border-radius: 15px;
+}
+
+.correct:hover{
+	color:#72bcd4;
+}
+
+.incorrect:hover{
+	color:#72bcd4;
+}
+
+#reload{
+	text-decoration: none;
+	 color:#000000;
+	 margin-left:40%;
+	 font-size: 150%;
+	 border:1px solid black;
+	 padding:1%;
+	 border-radius: 15px;
+	 margin-bottom:2%;
 }
