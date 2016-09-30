@@ -1,11 +1,11 @@
 
 .chosen{
-	background-color: green;
+	background-color: #55AE3A;
 	color:white;
 }
 
 .incorrect-chosen{
-	background-color: red;
+	background-color: #e60000;
 	color:white;
 }
 
@@ -66,10 +66,13 @@ p{
 #reload{
 	text-decoration: none;
 	 color:#000000;
-	 margin-left:40%;
 	 font-size: 150%;
 	 border:1px solid black;
 	 padding:1%;
 	 border-radius: 15px;
 	 margin-bottom:2%;
+}
+
+#tryAgain{
+	margin-left:42%;
 }
